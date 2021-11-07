@@ -1,0 +1,152 @@
+.navigation {
+    display: flex;
+    float: left;
+    margin-left: 2%;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation li {
+    float: left; 
+    list-style: none;
+}
+
+.navigation li  a {
+    display: block;
+    color: rgb(157, 0, 133);
+    text-align: left;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.navigation li  a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(157, 0, 157);
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all 0.3s ease-in;
+}
+
+.logo {
+  margin: 10px;
+    margin-left: 2%;
+}
+
+.active_page{
+    background-color: rgb(231, 190, 226);
+    border-radius: 30px;
+}
+
+
+body {
+    margin: 0 !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.marquee1 {
+    background-color: rgb(255, 213, 239);
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    padding: 16px;
+    background-color: white;
+}
+
+.profile {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    border-radius: 25px;
+    color: rgb(157, 0, 133);
+    opacity: 0.8;
+  }
+  
+.user-profile {
+  position: relative;
+  display: inline-block;
+  margin-right: 2%;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fdeefb;
+  min-width: 160px;
+  width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu-content a {
+  color: rgb(157, 0, 133);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+}
+
+.menu-content a:hover {
+  background-color: rgb(255, 214, 250);
+  zoom: 115%;
+  width: 200px;
+  text-decoration: none;
+  color: rgb(157, 0, 133);
+  }
+
+.user-profile:hover .menu-content {
+  display: block;
+}
+
+.user-profile:hover .profile {
+  opacity: 1;
+  color: rgb(98, 0, 69);
+  text-decoration: none;
+}
+
+.post{
+    margin: 200px;
+}
+
+.post1, .post2, .post3{
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.post1 .para{
+  padding-left: 30px;
+  color: black;
+}
+.post2 .para{
+  padding-left: 30px;
+  color: black;
+}
+.post3 .para{
+  padding-left: 30px;
+  color: black;
+}
+
+.post1:hover{
+  text-decoration: none;
+}
+
+.post2:hover{
+  text-decoration: none;
+}
+
+.post3:hover{
+  text-decoration: none;
+}
+
+.para h3:hover{
+  color: #a30088;
+}

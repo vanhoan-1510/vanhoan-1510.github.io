@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Add Task</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="add-style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    </head>
+    <body>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/fbicon.png" alt="" width="80px" />
+            </a>
+        </div>
+        <div class="class_container">
+            <!--menu bar-->
+            <nav class="navigation" id="myHeader">
+                <ul>
+                    <li>
+                        <a href="../index.html">Home </a>
+                    </li>
+                    <li>
+                        <a href="../news/news.html">News</a>
+                    </li>
+                    <li class="active-page">
+                        <a href="../task-list/main.html">Task List</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/fredprovip">Community</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-profile" style="float: right;">
+                <a class="profile" href="../profile/profile.html"> <i class="fas fa-user-circle"></i> Profile </a>
+                <div class="menu-content">
+                    <a href="../profile/change_passwod.html"> <i class="fas fa-exchange-alt"></i> Change password </a>
+                    <a href="../index.html"> <i class="fas fa-sign-out-alt"></i> Log out </a>
+                </div>
+            </div>
+            <!-- form -->
+            <form action="">
+                <div class="form_container">
+                    <h1>Add Task List</h1>
+                    <p>Add your tasks here. Fill full the form and click "Add" button bellow.</p>
+                    <div class="form">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label id="tasklist"><b>Task</b></label>
+                                    <input type="text" placeholder="Tasks" name="Tasks" id="task-list" required />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="date"><b>Deadline</b></label><br />
+                                    <div class="date-container">
+                                        <div class="form-group">
+                                            <div class="input-group date" id="datetimepicker1">
+                                                <input type="text" class="form-control" placeholder="dd/mm/yyyy HH:mm   " style="height: 50px;" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="details"><b>Details</b></label>
+                                    <input type="text" placeholder="Details" name="Detail" id="task-details" required />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="note"><b>Notes</b></label>
+                                    <input type="text" placeholder="Notes" name="note" id="task-note" required />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            <!-- form -->
+        </div>
+        <button type="button" class="btn btn-secondary" id="btn-cancel" onclick="window.location.href='edit.html'"><i class="fas fa-window-close"></i> Cancel</button>
+        <button type="button" class="btn btn-success" id="btn-success" onclick="window.location.href='edit.html'"><i class="fas fa-save"></i> Add</button>
+        <!-- Footer -->
+        <footer class="page-footer font-small blue" style="background-color: rgb(255, 235, 239); margin-top: 150px;">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                © 2021 Copyright: Monday Company
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </body>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#datetimepicker1").datetimepicker();
+        });
+    </script>
+</html>

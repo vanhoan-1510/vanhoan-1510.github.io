@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>My Profile</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="profile_style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    </head>
+    <body>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/fbicon.png" alt="" width="80px" />
+            </a>
+        </div>
+        <div class="class_container">
+            <!--menu bar-->
+            <nav class="navigation">
+                <ul>
+                    <li>
+                        <a href="../index.html">Home </a>
+                    </li>
+                    <li>
+                        <a href="../news/news.html">News</a>
+                    </li>
+                    <li>
+                        <a href="../task-list/main.html">Task List</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/fredprovip">Community</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-profile" style="float: right;">
+                <a class="profile" href="profile.html"><i class="fas fa-user-circle"></i> Profile</a>
+                <div class="menu-content">
+                    <a href="change_passwod.html"><i class="fas fa-exchange-alt"></i> Change password</a>
+                    <a href=../index.html><i class="fas fa-sign-out-alt"></i> Log out</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-container">
+            <div class="row">
+                <div class="col" id="col2-1">
+                    <img src="../images/avt.jpg" class="rounded-circle" id="user_img" alt="Avatar" />
+                    <div class="user-name">
+                        <h3>Name: Hoang Van Hoan</h3>
+                        <h4>Date of birth: 15-10-2001</h4>
+                    </div>
+                </div>
+                <div class="col-8" id="col2-2">
+                    <h3>Introduction:</h3>
+                    <p>
+                        Once upon a time, once upon a time, there were two brothers whose parents died early. When the older brother got married, the older brother didn't want to live with me anymore, so he decided to divide the
+                        inheritance. The greedy brother took over all the houses, fields, and cattle left by his parents, giving him only a small hut and a garden, in which there was a sweet star fruit tree. The younger brother did not
+                        complain, day by day fertilizing the star fruit tree and plowing and hoeing to support himself.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th width="150" style="font-size: 20px;">Email:</th>
+                <td style="font-size: 18px;">hoangvanhoan1510@gmail.com</td>
+            </tr>
+            <tr style="margin-left: 100px;">
+                <th style="font-size: 20px;">Phone:</th>
+                <td style="font-size: 18px;">0386152292</td>
+            </tr>
+            <tr style="margin-left: 100px;">
+                <th style="font-size: 20px;">Address:</th>
+                <td style="font-size: 18px;">Thang Binh, Quang Nam</td>
+            </tr>
+        </table>
+        <div class="col" id="col3"></div>
+        <div class="btn-edit">
+            <button type="button" class="btn btn-secondary" id="btn-edit" onclick="window.location.href='profile-edit.html'">
+                <i class="fas fa-pencil-alt"></i> Edit</button>
+        </div>
+        <!-- Footer -->
+        <footer class="page-footer font-small blue" style="background-color: rgb(255, 235, 239);">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                © 2021 Copyright: Monday Company
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </body>
+</html>

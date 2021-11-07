@@ -1,0 +1,137 @@
+ul {
+    list-style-type: none;
+    margin: 50% auto;
+    padding: 0;
+    overflow: hidden;
+    font-size: large;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  
+li {
+    float: left;
+  }
+
+
+li a {
+    display: block;
+    color: rgb(157, 0, 133);
+    text-align: left;
+    padding: 16px;
+}
+
+li a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(157, 0, 157);
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+.user {
+    color: rgb(157, 0, 157);
+    float: right;
+    margin-right: 2%;
+    padding: 16px;
+    font-size: large;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.user a:hover{
+    color: rgb(206, 6, 176);
+    text-decoration: none;
+}
+
+.user a.active-page {
+    background-color: rgb(231, 190, 226);
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.user a{
+    margin: 5px;
+}
+
+.logo{
+    margin-left: 2%;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navigation {
+    display: flex;
+    float: left;
+    margin-left: 2%;
+}
+
+.marquee1{
+    background-color: rgb(255, 213, 239);
+    color: rgb(0, 0, 0);
+}
+
+.col_container{
+    margin-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+}
+
+.container {
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    border-radius: 5px;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: rgb(157, 0, 133);
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 5px;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+
+
+  .name table{
+      width: 100%;
+  }
+
+  #first_name{
+      margin-right: 2%;
+  }
+
+  .col_container label{
+      float: left;
+  }
