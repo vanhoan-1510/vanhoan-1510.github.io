@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Task List</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="../images/fbicon.png">
+    <link rel="stylesheet" href="tasklist.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="managetasklists.js"></script>
+  </head>
+  <body onload="taskListRequest()">
+    <div class="logo">
+      <a href="../home.html">
+        <img src="../images/fbicon.png" alt="" width="100px" />
+      </a>
+    </div>
+    <div class="class_container">
+      <!--menu bar-->
+      <nav class="navigation" id="myHeader">
+        <ul>
+          <li>
+            <a href="../home.html">Home </a>
+          </li>
+          <li>
+            <a href="../news/news.html">News</a>
+          </li>
+          <li class="active-page">
+            <a href="tasklists.html">Task List</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/fredprovip">Community</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="user-profile" style="float:right;">
+        <a class="profile" href="../profile/profile.html">
+          <i class="fas fa-user-circle"></i> Profile </a>
+        <div class="menu-content">
+          <a href="../profile/change_passwod.html">
+            <i class="fas fa-exchange-alt"></i> Change password </a>
+          <a href="../index.html" id="logoutbutton">
+            <i class="fas fa-sign-out-alt"></i> Log out </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-container">
+      <div class="row">
+        <div class="col-2" id="col1">
+    
+          </div>
+          <div class="col-8" id="col2">
+            <div class="col2-container">
+              <div class="row">
+                <div class="col" id="col2-1"></div>
+                <div class="col-6" id="col2-2">
+                  <!-- task -->
+                </div>
+              </div>
+              <!-- tasks -->
+              <div class="task-table bg-color pad100">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="section-title text-center">
+                        <div class="title-text">
+                            <h2>Task List</h2>
+                        </div>
+                        <p>Save your work here and get to work</p>
+                    </div>
+                    </div>
+                  </div>
+                  <!--row end-->
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <ul class="nav custom-tab" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active show" id="monday-tab" data-toggle="tab" href="#monday" role="tab" aria-controls="home" aria-selected="true">Monday</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#tuesday" role="tab" aria-controls="profile" aria-selected="false">Tuesday</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#wednesday" role="tab" aria-controls="contact" aria-selected="false">Wednesday</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                          <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab" aria-controls="sunday" aria-selected="false">Thursday</a>
+                        </li>
+                        <li class="nav-item ">
+                          <a class="nav-link" id="friday-tab" data-toggle="tab" href="#friday" role="tab" aria-controls="monday" aria-selected="false">Friday</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#saturday" role="tab" aria-controls="monday" aria-selected="false">Saturday</a>
+                        </li>
+                        <li class="nav-item ">
+                          <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#sunday" role="tab" aria-controls="monday" aria-selected="false">Sunday</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="monday" role="tabpanel">
+                          <div class="table-responsive">
+                            <table class="table" id="myTable">
+                              <thead>
+                                <tr>
+                                  <th scope="col">No.</th>
+                                  <th scope="col">To do</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Notes</th>
+                                  <th scope="col" style="padding-left: 5%;">Edit</th>
+                                </tr>
+                              </thead>
+                              <tbody id="addtask">
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="tuesday" role="tabpanel" aria-labelledby="tuesday-tab">
+                          <div class="table-responsive">
+                            <table class="table">No task</table>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="wednesday" role="tabpanel" aria-labelledby="wednesday-tab">
+                          <div class="table-responsive">
+                            <table class="table">No task</table>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="thursday" role="tabpanel" aria-labelledby="thursday-tab">
+                          <div class="table-responsive">
+                            <table class="table">No task</table>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="friday" role="tabpanel" aria-labelledby="monday-tab">
+                          <div class="table-responsive">
+                            <table class="table">No task</table>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="saturday" role="tabpanel" aria-labelledby="monday-tab">
+                          <div class="table-responsive">
+                            <table class="table">No task</table>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="sunday" role="tabpanel" aria-labelledby="monday-tab">
+                          <div class="table-responsive">
+                            <table class="table">No task</table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- /col end-->
+                  </div>
+                  <!-- /row end-->
+                </div>
+                    <button type="button" class="btn btn-success" id="btn-cc" onclick="window.location.href='addtask.html'">
+                         <i class="fas fa-plus"></i> Add Task </button>               
+              </div>
+              <!-- tasks -->
+            </div>
+          </div>
+          <div class="col" id="col3">
+             <!--Clock-->
+             <div class="clockbox">
+              <svg id="clock" xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+                  <g id="face">
+                      <circle class="circle" cx="300" cy="300" r="253.9" />
+                      <path
+                          class="hour-marks"
+                          d="M300.5 94V61M506 300.5h32M300.5 
+                  506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 
+                  411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 
+                  419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"
+                      />
+                      <circle class="mid-circle" cx="300" cy="300" r="16.2" />
+                  </g>
+                  <g id="hour">
+                      <path class="hour-arm" d="M300.5 298V142" />
+                      <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+                  </g>
+                  <g id="minute">
+                      <path class="minute-arm" d="M300.5 298V67" />
+                      <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+                  </g>
+                  <g id="second">
+                      <path class="second-arm" d="M300.5 350V55" />
+                      <circle class="sizing-box" cx="300" cy="300" r="253.9" />
+                  </g>
+              </svg>
+          </div>
+
+          <!-- Edit Modal -->
+         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle" style="color: rgb(250, 192, 0);">Edit task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Edit your task.
+              </div>
+              <div class="form">
+                <label id="tasklist"><b>Task</b></label>
+                <input type="text" placeholder="Task name" name="Tasks" id="editTaskname" required />
+                <br>
+                <label id="details"><b>Details</b></label>
+                <input type="text" placeholder="Description" name="Detail" id="editDescription" required />
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning" id="editTaskButton">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Modal -->
+
+         <!-- Done Modal -->
+         <div class="modal fade" id="doneModal" tabindex="-1" role="dialog" aria-labelledby="doneModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle" style="color: rgb(0, 64, 255);">Task done</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Mark this task is done?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="markdoneButton">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Done Modal -->
+
+        <!-- Delete Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle" style="color: red;">Delete task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Delete this task?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="deleteTaskButton">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delete Modal -->
+
+          <!--Clock-->
+          </div>          
+        </div>
+        <!-- Footer -->
+        <footer class="page-footer font-small blue" id ="footer" ; margin-top: 120px;">
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">
+              © 2021 Copyright: Monday Company
+          </div>
+          <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+  </body>  
+
+</html>
+
+<!--clock js-->
+<script async>
+  const HOURHAND = document.querySelector("#hour");
+  const MINUTEHAND = document.querySelector("#minute");
+  const SECONDHAND = document.querySelector("#second");
+  var date = new Date();
+  console.log(date);
+  let hr = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+  console.log("Hour: " + hr + " Minute: " + min + " Second: " + sec);
+  let hrPosition = (hr * 360) / 12 + (min * (360 / 60)) / 12;
+  let minPosition = (min * 360) / 60 + (sec * (360 / 60)) / 60;
+  let secPosition = (sec * 360) / 60;
+
+  function runThetime() {
+      hrPosition = hrPosition + 3 / 360;
+      minPosition = minPosition + 6 / 60;
+      secPosition = secPosition + 6;
+      HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
+      MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
+      SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
+  }
+  var interval = setInterval(runThetime, 1000);
+  </script>
+  <script src="../logout.js"></script>
