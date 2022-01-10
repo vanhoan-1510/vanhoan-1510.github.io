@@ -164,10 +164,12 @@ table{
 
 .userInfo{
   margin-top: 200px;
-  text-align: center;
+  /* text-align: center; */
 }
 
-
+.userImage{
+  text-align: center;
+}
 #user_img{
   width: 10% ;
   height: auto ;
@@ -177,3 +179,4 @@ table{
   float: right;
   margin-right: 20%;
 }
+

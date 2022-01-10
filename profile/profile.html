@@ -5,7 +5,7 @@
         <title>My Profile</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="icon" href="../images/fbicon.png">
+        <link rel="icon" href="../images/fbicon.png" />
         <link rel="stylesheet" href="profile_style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
@@ -40,33 +40,13 @@
             </nav>
 
             <div class="user-profile" style="float: right;">
-                <a class="profile" href="profile.html"><i class="fas fa-user-circle"></i> Profile</a>
+                <a class="profile" href="profile/profile.html"> <i class="fas fa-user-circle"></i> Profile </a>
                 <div class="menu-content">
-                    <a href="change_passwod.html"><i class="fas fa-exchange-alt" id="logoutbutton"></i> Change password</a>
-                    <a href=../index.html id="logoutbutton"><i class="fas fa-sign-out-alt"></i> Log out</a>
+                    <a href="profile/change_passwod.html"> <i class="fas fa-exchange-alt"></i> Change password </a>
+                    <a href="index.html" id="logoutbutton"> <i class="fas fa-sign-out-alt"></i> Log out </a>
                 </div>
             </div>
         </div>
-        <!-- <div class="col-container">
-            <div class="row">
-                <div class="col" id="col2-1">
-                    <img src="../images/avt.jpg" class="rounded-circle" id="user_img" alt="Avatar" />
-                    <div class="user-name">
-                        <h3 id="username">Hoang Van Hoan</h3>
-                    </div>
-                </div>
-                <div class="col-8" id="col2-2">
-                    <h3>Introduction:</h3>
-                    <p>
-                        Once upon a time, once upon a time, there were two brothers whose parents died early. When the older brother got married, the older brother didn't want to live with me anymore, so he decided to divide the
-                        inheritance. The greedy brother took over all the houses, fields, and cattle left by his parents, giving him only a small hut and a garden, in which there was a sweet star fruit tree. The younger brother did not
-                        complain, day by day fertilizing the star fruit tree and plowing and hoeing to support himself.
-                    </p>
-                </div>
-            </div>
-        </div> -->
-
-
         <div class="userInfo">
             <div class="userImage">
                 <img src="../images/avt.png" class="rounded-circle" id="user_img" alt="Avatar" />
@@ -92,34 +72,33 @@
                     </tr>
                 </table>
             </div>
-            
         </div>
 
-        <button type="button" class="btn btn-warning" id="btnEdit" data-toggle="modal" data-target="#editModal" >Edit</button>
+        <button type="button" class="btn btn-warning" id="btnEdit" data-toggle="modal" data-target="#editModal">Edit</button>
 
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalTitle" style="color: rgb(250, 192, 0);">Update user name</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle" style="color: rgb(250, 192, 0);">Update user name</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Edit your name.
+                    </div>
+                    <div class="form">
+                        <label id="tasklist"><b>New name: </b></label>
+                        <input type="text" placeholder="Your name" name="username" id="nameuser" required />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-warning" onclick="return updateUserName()">Save</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                  Edit your name.
-                </div>
-                <div class="form">
-                  <label id="tasklist"><b>New name: </b></label>
-                  <input type="text" placeholder="Your name" name="username" id="nameuser" required />
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-warning" onclick="return updateUserName()">Save</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
         <!-- Footer -->
         <footer class="page-footer font-small blue" id="footer">
@@ -133,52 +112,35 @@
     </body>
 </html>
 
-
 <script>
-    var uid = localStorage.getItem('uid');
-    var jwt = localStorage.getItem('jwt');
-    var client = localStorage.getItem('client');
+    var uid = localStorage.getItem("uid");
+    var jwt = localStorage.getItem("jwt");
+    var client = localStorage.getItem("client");
 
-    // let nameOfUser = "Tôn Hành Giả";
-    // if (nameOfUser == null){
-    //     document.getElementById("username").innerHTML = nameOfUser;
-    // }
-    // else{
-    //     document.getElementById("username").innerHTML = localStorage.getItem("name")
-    // };
-
-    document.getElementById("username").innerHTML = localStorage.getItem("name")
-
+    document.getElementById("username").innerHTML = localStorage.getItem("name");
     document.getElementById("userEmail").innerHTML = localStorage.getItem("uid");
-    // document.getElementById("userEmail").innerHTML = localStorage.getItem("Uid");
 
     const updateUserName = async () => {
-
-
-    let name = document.getElementById("nameuser").value;
-    localStorage.setItem("name", name);
-    const response = await fetch('https://tasklist-minh.herokuapp.com/auth',  {
-        method: 'PATCH',
-        headers: {
-            'Access-Token': jwt,
-            'UID': uid,
-            'Client': client,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name
-        })
-
-    });
-    location.reload();
-}
-                
+        let name = document.getElementById("nameuser").value;
+        localStorage.setItem("name", name);
+        const response = await fetch("https://tasklist-minh.herokuapp.com/auth", {
+            method: "PATCH",
+            headers: {
+                "Access-Token": jwt,
+                UID: uid,
+                Client: client,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name,
+            }),
+        });
+        location.reload();
+    };
 
     if (jwt && uid && client != null) {
-    
-    }
-    else{
-        window.location.href = '../index.html';
+    } else {
+        window.location.href = "../index.html";
     }
 </script>
 <script src="../logout.js"></script>

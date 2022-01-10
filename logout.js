@@ -6,7 +6,6 @@ logout.addEventListener('click', function(){
     localStorage.removeItem('client');
     localStorage.removeItem('name');
     localStorage.removeItem('password');
-    // window.location.href = 'index.html';
 
 }
 ,false
